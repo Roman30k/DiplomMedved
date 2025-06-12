@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Articso.ua</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+	<script src="static/js/jquery-3.4.1.min.js"></script>
+	<script src="static/js/slick.js"></script>
+	<script src="static/js/script.js"></script>
+	<link href="static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="static/css/slick.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
+	<link href="static/css/style.css" rel="stylesheet" type="text/css">
+<style>
+	.slider-block {
+		position: relative;
+		margin: 0 auto;
+		max-width: 100%;
+		overflow: hidden;
+	}
+	.slider .slick-slide {
+		position: relative;
+		text-align: center;
+	}
+	.slider img {
+		width: 100%;
+		height: auto;
+		display: block;
+		margin: auto;
+	}
+	.text-box {
+		position: absolute;
+		bottom: 20px;
+		left: 50%;
+		background: rgba(0, 0, 0, 0.5);
+		color: white;
+		padding: 10px 20px;
+		border-radius: 5px;
+		font-size: 18px;
+	}
+	.popup {
+	width: 600px;
+	max-height: 90vh;
+	overflow-y: auto;
+	padding: 20px;
+	box-sizing: border-box;
+}
+	</style>
+</head>
+<body>
+	<div class="vein"></div>
+	<div class="main container">
+		<header>
+			<div class="mobile-menu-open-button js_mobile_menu_open_button"><i class="fas fa-bars"></i></div>
+			<div class="slider-block">
+				<div class="slider">
+					<div>
+						<img src="static/img/slide-1.jpg" alt="Слайд 1">
+						<span class="text-box">Кращі ціни на ринку</span>
+					</div>
+					<div>
+						<img src="static/img/slide-2.jpg" alt="Слайд 2">
+						<span class="text-box">Великий асортимент</span>
+					</div>
+					<div>
+						<img src="static/img/slide-3.jpg" alt="Слайд 3">
+						<span class="text-box">Доставка в любе місто України</span>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<section class="product-box">
+			<h2>Каталог</h2>
+			<input type="text" id="searchInput" placeholder="Пошук товару..." onkeyup="filterProducts()">
+			<div class="row">
+				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 product-parent">
+					<div class="product">
+						<div class="product-pic" style="background: url('static/img/product-1.jpg') no-repeat; background-size: auto 100%; background-position: center"></div>
+						<span class="product-name">Iphone</span>
+						<span class="product_price">60000 грн</span>
+						<button class="js_buy" data-specs="Діагональ дисплея 6,9\n
+						Роздільна здатність екрану - 2868х1320\n
+						Частота оновлення екрану - 120 Гц\n
+						Ємність акумулятора - 4676 мАг\n
+						Модель процесора - Apple A18 Pro Bionic\n
+						Кількість ядер - 6 ядер\n
+						Вбудована пам'ять - 256 ГБ\n
+						Основна камера - 48+48+12 Мп\n
+						Фронтальна камера - 12 Мп\n
+						Матеріал корпусу - Титан\n
+						Висота - 163 мм\n
+						Ширина - 77,6 мм\n
+						Глибина - 8,25 мм\n
+						Вага - 227 г\n
+						Колір виробника - Бежевий\n">Купити</button>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 product-parent">
+					<div class="product">
+						<div class="product-pic" style="background: url('static/img/product-2.png') no-repeat; background-size: auto 100%; background-position: center"></div>
+						<span class="product-name">Samsung</span>
+						<span class="product_price">40000 грн</span>
+						<button class="js_buy" data-specs="Діагональ дисплея 6,7\n
+						Роздільна здатність екрану - 2400х1080 Full HD+\n
+						Частота оновлення екрану - 90 Гц\n
+						Ємність акумулятора - 5000 мАг\n
+						Модель процесора - Qualcomm Snapdragon 680\n
+						Кількість ядер - 8 ядер\n
+						Вбудована пам'ять - 128 ГБ\n
+						Основна камера - 50+2+2 Мп\n
+						Фронтальна камера - 13 Мп\n
+						Матеріал корпусу - Пластик\n
+						Висота - 168 мм\n
+						Ширина - 77,8 мм\n
+						Глибина - 8,8 мм\n
+						Вага - 195 г\n
+						Колір виробника - Чорний\n">Купити</button>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 product-parent">
+					<div class="product">
+						<div class="product-pic" style="background: url('static/img/product-3.jpg') no-repeat; background-size: auto 100%; background-position: center"></div>
+						<span class="product-name">Xiaomi</span>
+						<span class="product_price">20000 грн</span>
+						<button class="js_buy" data-specs="Діагональ дисплея 6,7\n
+						Роздільна здатність екрану - 2400х1080 Full HD+\n
+						Частота оновлення екрану - 120 Гц\n
+						Ємність акумулятора - 5500 мАг\n
+						Модель процесора - MediaTek Helio G100 Ultra\n
+						Кількість ядер - 8 ядер\n
+						Вбудована пам'ять - 256 ГБ\n
+						Основна камера - 200+8+2 Мп\n
+						Фронтальна камера - 32 Мп\n
+						Матеріал корпусу - Пластик\n
+						Висота - 162,16 мм\n
+						Ширина - 74,92 мм\n
+						Глибина - 8,24 мм\n
+						Вага - 180 г\n
+						Колір виробника - Чорний\n">Купити</button>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 product-parent">
+					<div class="product">
+						<div class="product-pic" style="background: url('static/img/product-4.jpg') no-repeat; background-size: auto 100%; background-position: center"></div>
+						<span class="product-name">Motorola</span>
+						<span class="product_price">10000 грн</span>
+						<button class="js_buy" data-specs="Діагональ дисплея 6,56\n
+						Роздільна здатність екрану - 1612х720 HD+\n
+						Частота оновлення екрану - 90 Гц\n
+						Ємність акумулятора - 5000 мАг\n
+						Модель процесора - UNISOC T606\n
+						Кількість ядер - 8 ядер\n
+						Вбудована пам'ять - 64 ГБ\n
+						Основна камера - 13 Мп\n
+						Фронтальна камера - 5 Мп\n
+						Матеріал корпусу - Пластик\n
+						Висота - 163,49 мм\n
+						Ширина - 74,53 мм\n
+						Глибина - 7,99 мм\n
+						Вага - 178,8 г\n
+						Колір виробника - Графіт\n">Купити</button>>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 product-parent">
+					<div class="product">
+						<div class="product-pic" style="background: url('static/img/product-5.jpg') no-repeat; background-size: auto 100%; background-position: center"></div>
+						<span class="product-name">Expert PC Ultimate</span>
+						<span class="product_price">43000 грн</span>
+						<button class="js_buy" data-specs="Виробник процесора - Intel\n
+						Процесор - Core i5-12400F\n
+						Кількість ядер - 6 ядер\n
+						Частота центрального процесора - 2,5 (4,4) ГГц\n
+						Чипсет - Intel H610\n
+						Об'єм ОЗП - 32 ГБ\n
+						Тип оперативної пам'яті - DDR4\n
+						Виробник відеокарти - Nvidia\n
+						Модель графічного процесора - GeForce RTX 4060\n
+						Об'єм відео пам'яті - 8 ГБ\n
+						Тип пам'яті відеокарти - GDDR6\n
+						Тип корпуса - Minitower\n
+						Блок живлення, Вт - 600 Вт\n
+						Вага в упаковці, кг - 9 кг\n
+						Колір виробника - Чорний\n">Купити</button>>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 product-parent">
+					<div class="product">
+						<div class="product-pic" style="background: url('static/img/product-6.jpg') no-repeat; background-size: auto 100%; background-position: center"></div>
+						<span class="product-name">Expert PC Ultimate Pro</span>
+						<span class="product_price">51000 грн</span>
+						<button class="js_buy" data-specs="Виробник процесора - AMD\n
+						Процесор - Ryzen 5 5600\n
+						Кількість ядер - 6 ядер\n
+						Частота центрального процесора - 3,5 (4,4) ГГц\n
+						Чипсет - AMD B550\n
+						Об'єм ОЗП - 32 ГБ\n
+						Тип оперативної пам'яті - DDR4\n
+						Виробник відеокарти - Nvidia\n
+						Модель графічного процесора - GeForce RTX 4060 Ti\n
+						Об'єм відео пам'яті - 8 ГБ\n
+						Тип пам'яті відеокарти - GDDR6\n
+						Тип корпуса - Miditower\n
+						Блок живлення, Вт - 750 Вт\n
+						Вага в упаковці, кг - 11 кг\n
+						Колір виробника - Чорний\n">Купити</button>>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 product-parent">
+					<div class="product">
+						<div class="product-pic" style="background: url('static/img/product-7.jpg') no-repeat; background-size: auto 100%; background-position: center"></div>
+						<span class="product-name">QUBE QB</span>
+						<span class="product_price">33500 грн</span>
+						<button class="js_buy" data-specs="Виробник процесора - AMD\n
+						Процесор - Ryzen 5 5600\n
+						Кількість ядер - 6 ядер\n
+						Частота центрального процесора - 3,5 (4,4) ГГц\n
+						Чипсет - AMD A320\n
+						Об'єм ОЗП - 32 ГБ\n
+						Тип оперативної пам'яті - DDR4\n
+						Виробник відеокарти - Nvidia\n
+						Модель графічного процесора - GeForce RTX 4060\n
+						Об'єм відео пам'яті - 8 ГБ\n
+						Тип пам'яті відеокарти - GDDR6\n
+						Тип корпуса - Minitower\n
+						Блок живлення, Вт - 650 Вт\n
+						Вага в упаковці, кг - 11 кг\n
+						Колір виробника - Чорний\n">Купити</button>>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 product-parent">
+					<div class="product">
+						<div class="product-pic" style="background: url('static/img/product-8.jpg') no-repeat; background-size: auto 100%; background-position: center"></div>
+						<span class="product-name">Cobra Advanced</span>
+						<span class="product_price">25000 грн</span>
+						<button class="js_buy" data-specs="Виробник процесора - AMD\n
+						Процесор - Ryzen 5 4500\n
+						Кількість ядер - 6 ядер\n
+						Частота центрального процесора - 3,6 (4,1) ГГц\n
+						Чипсет - AMD A320\n
+						Об'єм ОЗП - 16 ГБ\n
+						Тип оперативної пам'яті - DDR4\n
+						Виробник відеокарти - Nvidia\n
+						Модель графічного процесора - GeForce RTX 3050\n
+						Об'єм відео пам'яті - 8 ГБ\n
+						Тип пам'яті відеокарти - GDDR6\n
+						Тип корпуса - Minitower\n
+						Блок живлення, Вт - 600 Вт\n
+						Вага в упаковці, кг - 6 кг\n
+						Колір виробника - Чорний\n">Купити</button>>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 product-parent">
+					<div class="product">
+						<div class="product-pic" style="background: url('static/img/product-9.jpg') no-repeat; background-size: auto 100%; background-position: center"></div>
+						<span class="product-name">Hator Hypergang 2</span>
+						<span class="product_price">14100 грн</span>
+						<button class="js_buy" data-specs="Тип піключення - Дротові\n
+						Акустичне оформлення - Закриті\n
+						Довжина кабелю - 1,5 м\n
+						Діапазон частот - 10-22000 Гц\n
+						Опір - 64 Ом\n
+						Чутливість - 110 ± 3 дБ\n
+						Особливості - Знімний шнур\n
+						Мікрофон - Так\n
+						Спрямованість мікрофона - Всеспрямований\n
+						Діапазон частот мікрофона - 100-10000 Гц\n
+						Чутливість мікрофона - -42 дБ\n
+						Матеріал корпусу - Пластик\n
+						Вага - 245 г\n
+						Бренд - Hator\n
+						Колір виробника - Чорний\n">Купити</button>>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 product-parent">
+					<div class="product">
+						<div class="product-pic" style="background: url('static/img/product-10.jpg') no-repeat; background-size: auto 100%; background-position: center"></div>
+						<span class="product-name">Logitech G435</span>
+						<span class="product_price">4399 грн</span>
+						<button class="js_buy" data-specs="Тип піключення - Бездротові\n
+						Акустичне оформлення - Закриті\n
+						Довжина кабелю - 1,5 м\n
+						Діапазон частот - 20-20000 Гц\n
+						Опір - 45 Ом\n
+						Чутливість - 83,1 дБ\n
+						Особливості - Multipoint\n
+						Мікрофон - Так\n
+						Спрямованість мікрофона - Односпрямований\n
+						Діапазон частот мікрофона - 100-8000 Гц\n
+						Чутливість мікрофона - -35 дБ\n
+						Матеріал корпусу - Пластик\n
+						Вага - 165 г\n
+						Бренд - Logitech\n
+						Колір виробника - Чорний\n">Купити</button>>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 product-parent">
+					<div class="product">
+						<div class="product-pic" style="background: url('static/img/product-11.jpg') no-repeat; background-size: auto 100%; background-position: center"></div>
+						<span class="product-name">Logitech G PRO X 2</span>
+						<span class="product_price">10399 грн</span>
+						<button class="js_buy" data-specs="Тип піключення - Бездротові\n
+						Акустичне оформлення - Закриті\n
+						Довжина кабелю - 1,8 м\n
+						Діапазон частот - 20-20000 Гц\n
+						Опір - 38 Ом\n
+						Чутливість - 88 дБ\n
+						Особливості - Знімний шнур, Bluetooth\n
+						Мікрофон - Так\n
+						Спрямованість мікрофона - Односпрямований\n
+						Діапазон частот мікрофона - 100-10000 Гц\n
+						Чутливість мікрофона - -50 дБ\n
+						Матеріал корпусу - Пластик\n
+						Вага - 345 г\n
+						Бренд - Logitech\n
+						Колір виробника - Чорний\n">Купити</button>>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 product-parent">
+					<div class="product">
+						<div class="product-pic" style="background: url('static/img/product-12.jpg') no-repeat; background-size: auto 100%; background-position: center"></div>
+						<span class="product-name">Razer Blackshark V2 X</span>
+						<span class="product_price">2999 грн</span>
+						<button class="js_buy" data-specs="Тип піключення - Дротові\n
+						Акустичне оформлення - Закриті\n
+						Довжина кабелю - 1,3 м\n
+						Діапазон частот - 12-28000 Гц\n
+						Опір - 32 Ом\n
+						Чутливість - 100 дБ\n
+						Особливості - Підсвітка\n
+						Мікрофон - Так\n
+						Спрямованість мікрофона - Всеспрямований\n
+						Діапазон частот мікрофона - 100-10000 Гц\n
+						Чутливість мікрофона - 42 дБ\n
+						Матеріал корпусу - Пластик\n
+						Вага - 240 г\n
+						Бренд - Razer\n
+						Колір виробника - Чорний\n">Купити</button>>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 product-parent">
+					<div class="product">
+						<div class="product-pic" style="background: url('static/img/product-13.jpg') no-repeat; background-size: auto 100%; background-position: center"></div>
+						<span class="product-name">Apple iPad 10.9</span>
+						<span class="product_price">14999 грн</span>
+						<button class="js_buy" data-specs="Діагональ дисплея - 10,9\n
+						Роздільна здатність екрану - 2360x1640\n
+						Тип матриці - IPS\n
+						Ємність акумулятора - 28,6 Вт/г\n
+						Модель процесора - A14 Bionic\n
+						Кількість ядер - 6 ядер\n
+						Вбудована пам'ять - 64 ГБ\n
+						Основна камера - 12 Мп\n
+						Фронтальна камера - 12 Мп\n
+						Матеріал корпусу - Метал\n
+						Висота - 248,6 мм\n
+						Ширина - 179,5 мм\n
+						Глибина - 7 мм\n
+						Вага - 477 г\n
+						Колір виробника - Сріблястий\n">Купити</button>>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 product-parent">
+					<div class="product">
+						<div class="product-pic" style="background: url('static/img/product-14.jpg') no-repeat; background-size: auto 100%; background-position: center"></div>
+						<span class="product-name">Xiaomi Redmi Pad Pro</span>
+						<span class="product_price">9999 грн</span>
+						<button class="js_buy" data-specs="Діагональ дисплея - 12,1\n
+						Роздільна здатність екрану - 2560x1600\n
+						Тип матриці - LCD\n
+						Ємність акумулятора - 10000 мАг\n
+						Модель процесора - Qualcomm Snapdragon 7s Gen 2\n
+						Кількість ядер - 8 ядер\n
+						Вбудована пам'ять - 128 ГБ\n
+						Основна камера - 8 Мп\n
+						Фронтальна камера - 8 Мп\n
+						Матеріал корпусу - Метал\n
+						Висота - 280 мм\n
+						Ширина - 181,85 мм\n
+						Глибина - 7,52 мм\n
+						Вага - 571 г\n
+						Колір виробника - Сірий\n">Купити</button>>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 product-parent">
+					<div class="product">
+						<div class="product-pic" style="background: url('static/img/product-15.jpg') no-repeat; background-size: auto 100%; background-position: center"></div>
+						<span class="product-name">Hator Pulsar 3 Wireless</span>
+						<span class="product_price">1999 грн</span>
+						<button class="js_buy" data-specs="Тип сенсора миші - Оптичний
+						Тип підключення - Бездротовий\n
+						Тип бездротового зв'язку - Радіоканал\n
+						Тип живлення - Акумулятор\n
+						Роздільна здатність оптичного сенсора миші (dpi) - 12000 dpi\n
+						Кількість клавіш - 6\n
+						Довжина проводу миші - 1,8 м\n
+						Ергономіка миші - Для правої і лівої руки\n
+						Підсвічування - Так\n
+						Матеріал корпусу - Пластик\n
+						Висота - 38 мм\n
+						Ширина - 68 мм\n
+						Глибина - 123 мм\n
+						Вага - 71 г\n
+						Колір виробника - Чорний\n">Купити</button>>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 product-parent">
+					<div class="product">
+						<div class="product-pic" style="background: url('static/img/product-16.png') no-repeat; background-size: auto 100%; background-position: center"></div>
+						<span class="product-name">Logitech G Pro X</span>
+						<span class="product_price">6299 грн</span>
+						<button class="js_buy" data-specs="Тип сенсора миші - Оптичний
+						Тип підключення - Бездротовий\n
+						Тип бездротового зв'язку - Радіоканал\n
+						Тип живлення - Акумулятор\n
+						Роздільна здатність оптичного сенсора миші (dpi) - 32000 dpi\n
+						Кількість клавіш - 5\n
+						Довжина проводу миші - 1,5 м\n
+						Ергономіка миші - Для правої і лівої руки\n
+						Підсвічування - Так\n
+						Матеріал корпусу - Пластик\n
+						Висота - 125 мм\n
+						Ширина - 63,5 мм\n
+						Глибина - 40 мм\n
+						Вага - 60 г\n
+						Колір виробника - Чорний\n">Купити</button>>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="about-us">
+			<h2>Про компанію</h2>
+			<p>Articso.ua — це надійний постачальник сучасної електроніки в Україні. Ми пропонуємо широкий вибір техніки за конкурентними цінами з доставкою по всій країні. Наша мета — зробити покупку електроніки максимально простою, зручною та вигідною для кожного клієнта.</p>
+			<p>Ми ретельно відбираємо товари, щоб забезпечити лише актуальні моделі смартфонів, планшетів, аксесуарів та іншої техніки від перевірених постачальників.</p> 
+			<p>Ми працюємо з індивідуальним підходом до кожного замовлення, забезпечуючи швидку обробку запитів, оперативну консультацію та чесні умови продажу. Articso.ua — це сервіс, якому довіряють.</p>
+		</section>
+
+		<section class="contacts">
+			<h2>Контакти</h2>
+			<p>Email: medvedroman76@gmail.com</p>
+			<p>Телефон: +38(096)317-11-78</p>
+			<p>Адреса: м. Полтава, вул. Юліана Матвійчука 83а</p>
+		</section>
+		<footer>
+			2025 © Все буде Україна!
+		</footer>
+	<div class="overlay js_overlay"></div>
+<div class="popup">
+	<h3>Оформлення замовлення</h3><i class="fas fa-times close-popup js_close-popup"></i>
+	<div class='js_error'></div>
+	<p><strong>Характеристики:</strong></p>
+	<p id="buySpecs" style="margin-bottom: 10px; font-style: italic;">—</p>
+	<input type="hidden" name="product-id">
+	<input type="text" name="fio" placeholder="Ваше ім'я">
+	<input type="text" name="phone" placeholder="Телефон">
+	<input type="text" name="email" placeholder="e-mail">
+	<textarea placeholder="Коментар" name="comment"></textarea>
+	<button class="js_send">Відправити</button>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+	const buyButtons = document.querySelectorAll(".js_buy");
+	const overlay = document.querySelector(".js_overlay");
+	const popup = document.querySelector(".popup");
+	const specsBlock = document.getElementById("buySpecs");
+
+	buyButtons.forEach(btn => {
+		btn.addEventListener("click", function () {
+			const specs = this.dataset.specs || "Характеристики не вказано";
+			specsBlock.innerHTML = specs.replace(/\\n/g, '<br>');
+			popup.style.display = "block";
+			overlay.style.display = "block";
+		});
+	});
+
+	document.querySelectorAll(".js_close-popup, .js_overlay").forEach(el => {
+		el.addEventListener("click", () => {
+			popup.style.display = "none";
+			overlay.style.display = "none";
+		});
+	});
+});
+function filterProducts() {
+    const input = document.getElementById("searchInput");
+    const filter = input.value.toLowerCase();
+    const products = document.querySelectorAll(".product-parent");
+
+    products.forEach(product => {
+        const name = product.querySelector(".product-name").textContent.toLowerCase();
+        if (name.includes(filter)) {
+            product.style.display = "";
+        } else {
+            product.style.display = "none";
+        }
+    });
+}
+</script>
+</body>
+</html>
